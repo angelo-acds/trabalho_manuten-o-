@@ -1,0 +1,269 @@
+== sudoku.mutant.5
+<  public:
+>  /*public:*/
+== sudoku.mutant.17
+<  public:
+>  /*public:*/
+== sudoku.mutant.29
+<  public:
+>  /*public:*/
+== sudoku.mutant.41
+<  public:
+>  /*public:*/
+== sudoku.mutant.184
+<   bool esta_completo() const { return contar_celulas_vazias() == 0; }
+>   bool esta_completo() const { return contar_celulas_vazias() <= 0; }
+== sudoku.mutant.214
+<  private:
+>  /*private:*/
+== sudoku.mutant.226
+<   static bool compartilham_regiao(Posicao a, Posicao b);
+>   static bool compartilham_regiao ( Posicao b,Posicao a);
+== sudoku.mutant.272
+<   return posicao.linha >= 0 && posicao.linha < TAMANHO &&
+>   return posicao.linha >= 0 && posicao.linha != TAMANHO &&
+== sudoku.mutant.307
+<          posicao.coluna >= 0 && posicao.coluna < TAMANHO;
+>          posicao.coluna >= 0 && posicao.coluna != TAMANHO;
+== sudoku.mutant.366
+<   return numero >= NUMERO_MINIMO && numero <= NUMERO_MAXIMO;
+>   return numero >= (1==1) && numero <= NUMERO_MAXIMO;
+== sudoku.mutant.389
+<   constexpr int BLOCOS_POR_LINHA = TAMANHO / TAMANHO_BLOCO;
+>   constexpr int BLOCOS_POR_LINHA = TAMANHO + TAMANHO_BLOCO;
+== sudoku.mutant.390
+<   constexpr int BLOCOS_POR_LINHA = TAMANHO / TAMANHO_BLOCO;
+>   constexpr int BLOCOS_POR_LINHA = TAMANHO - TAMANHO_BLOCO;
+== sudoku.mutant.391
+<   constexpr int BLOCOS_POR_LINHA = TAMANHO / TAMANHO_BLOCO;
+>   constexpr int BLOCOS_POR_LINHA = TAMANHO * TAMANHO_BLOCO;
+== sudoku.mutant.396
+<   return posicao.linha / TAMANHO_BLOCO * BLOCOS_POR_LINHA +
+>   return posicao.linha / TAMANHO_BLOCO * BLOCOS_POR_LINHA -
+== sudoku.mutant.422
+< bool Tabuleiro::compartilham_regiao(Posicao a, Posicao b) {
+> bool Tabuleiro::compartilham_regiao ( Posicao b,Posicao a) {
+== sudoku.mutant.486
+<     if (numero == CELULA_VAZIA) {
+>     if (numero <= CELULA_VAZIA) {
+== sudoku.mutant.506
+>       continue;
+== sudoku.mutant.509
+>     continue;
+== sudoku.mutant.533
+<   for (int ordem = 0; ordem < TOTAL_CELULAS; ordem++) {
+>   for (int ordem = 0; ordem != TOTAL_CELULAS; ordem++) {
+== sudoku.mutant.553
+>     continue;
+== sudoku.mutant.554
+<     if (outra == posicao || !compartilham_regiao(posicao, outra)) {
+>     if (outra == posicao || !compartilham_regiao ( outra,posicao)) {
+== sudoku.mutant.570
+>       break;
+== sudoku.mutant.571
+>       continue;
+== sudoku.mutant.586
+>       break;
+== sudoku.mutant.587
+>       continue;
+== sudoku.mutant.590
+>     continue;
+== sudoku.mutant.666
+<   if (numero != CELULA_VAZIA && !pode_receber(posicao, numero)) {
+>   if (numero > CELULA_VAZIA && !pode_receber(posicao, numero)) {
+== sudoku.mutant.766
+>       continue;
+== sudoku.mutant.769
+>     continue;
+== sudoku.mutant.802
+<   for (int ordem = 0; ordem < TOTAL_CELULAS; ordem++) {
+>   for (int ordem = 0; ordem != TOTAL_CELULAS; ordem++) {
+== sudoku.mutant.814
+<     if (celulas_[ordem] != CELULA_VAZIA) {
+>     if (celulas_[ordem] > CELULA_VAZIA) {
+== sudoku.mutant.818
+>     continue;
+== sudoku.mutant.823
+>       break;
+== sudoku.mutant.824
+>       continue;
+== sudoku.mutant.855
+>     continue;
+== sudoku.mutant.860
+>       break;
+== sudoku.mutant.861
+>       continue;
+== sudoku.mutant.868
+>     break;
+== sudoku.mutant.869
+>     continue;
+== sudoku.mutant.893
+<     // FACIL
+>     /*// FACIL*/
+== sudoku.mutant.950
+<     // MEDIO
+>     /*// MEDIO*/
+== sudoku.mutant.1007
+<     // DIFICIL
+>     /*// DIFICIL*/
+== sudoku.mutant.1093
+<   for (int ordem = 0; ordem < Tabuleiro::TOTAL_CELULAS; ordem++) {
+>   for (int ordem = 0; ordem != Tabuleiro::TOTAL_CELULAS; ordem++) {
+== sudoku.mutant.1105
+<     desafio.preencher(Tabuleiro::posicao_da_ordem(ordem), texto[ordem] - '0');
+>     desafio.preencher(Tabuleiro::posicao_da_ordem(ordem), texto[ordem] % '0');
+== sudoku.mutant.1112
+>     continue;
+== sudoku.mutant.1170
+<     for (int ordem = 0; ordem < Tabuleiro::TOTAL_CELULAS; ordem++) {
+>     for (int ordem = 0; ordem != Tabuleiro::TOTAL_CELULAS; ordem++) {
+== sudoku.mutant.1180
+>       continue;
+== sudoku.mutant.1227
+<  private:
+>  /*private:*/
+== sudoku.mutant.1406
+<   while (numeros.size() < Tabuleiro::TOTAL_CELULAS && arquivo_.get(digito)) {
+>   while (numeros.size() != Tabuleiro::TOTAL_CELULAS && arquivo_.get(digito)) {
+== sudoku.mutant.1433
+>     continue;
+== sudoku.mutant.1441
+<   if (numeros.size() < Tabuleiro::TOTAL_CELULAS) {
+>   if (numeros.size() != Tabuleiro::TOTAL_CELULAS) {
+== sudoku.mutant.1482
+<   int total = 0;
+>   int total = 1;
+== sudoku.mutant.1483
+<   int total = 0;
+>   int total = -1;
+== sudoku.mutant.1484
+<   int total = 0;
+>   int total = (0+1);
+== sudoku.mutant.1485
+<   int total = 0;
+>   int total = (0-1);
+== sudoku.mutant.1564
+<   garantir_gravacao_bem_sucedida();
+>   /*garantir_gravacao_bem_sucedida();*/
+== sudoku.mutant.1592
+<   for (int ordem = 0; ordem < Tabuleiro::TOTAL_CELULAS; ordem++) {
+>   for (int ordem = 0; ordem != Tabuleiro::TOTAL_CELULAS; ordem++) {
+== sudoku.mutant.1623
+>     continue;
+== sudoku.mutant.1643
+<   if (!arquivo_) {
+>   if (0==1) {
+== sudoku.mutant.1647
+<     throw ErroDeGravacao("Falha ao gravar o registro da partida");
+>     throw ErroDeGravacao("");
+== sudoku.mutant.1648
+<     throw ErroDeGravacao("Falha ao gravar o registro da partida");
+>     /*throw ErroDeGravacao("Falha ao gravar o registro da partida");*/
+== sudoku.mutant.1693
+<  private:
+>  /*private:*/
+== sudoku.mutant.1776
+<          desafio_.numero_em(posicao) != Tabuleiro::CELULA_VAZIA;
+>          desafio_.numero_em(posicao) > Tabuleiro::CELULA_VAZIA;
+== sudoku.mutant.1886
+>     continue;
+== sudoku.mutant.1932
+<   if (numero == Tabuleiro::CELULA_VAZIA) {
+>   if (numero <= Tabuleiro::CELULA_VAZIA) {
+== sudoku.mutant.2033
+<   for (int coluna = 0; coluna < Tabuleiro::TAMANHO; coluna++) {
+>   for (int coluna = 0; coluna != Tabuleiro::TAMANHO; coluna++) {
+== sudoku.mutant.2047
+<     if (coluna > 0 && coluna % Tabuleiro::TAMANHO_BLOCO == 0) {
+>     if (coluna > 0 && coluna % Tabuleiro::TAMANHO_BLOCO <= 0) {
+== sudoku.mutant.2055
+<     if (coluna > 0 && coluna % Tabuleiro::TAMANHO_BLOCO == 0) {
+>     if (coluna != 0 && coluna % Tabuleiro::TAMANHO_BLOCO == 0) {
+== sudoku.mutant.2056
+<     if (coluna > 0 && coluna % Tabuleiro::TAMANHO_BLOCO == 0) {
+>     if (coluna > 1 && coluna % Tabuleiro::TAMANHO_BLOCO == 0) {
+== sudoku.mutant.2060
+<     if (coluna > 0 && coluna % Tabuleiro::TAMANHO_BLOCO == 0) {
+>     if (coluna > (0+1) && coluna % Tabuleiro::TAMANHO_BLOCO == 0) {
+== sudoku.mutant.2080
+<     if (coluna > 0 && coluna % Tabuleiro::TAMANHO_BLOCO == 0) {
+>     if (coluna > (1==1) && coluna % Tabuleiro::TAMANHO_BLOCO == 0) {
+== sudoku.mutant.2099
+>     continue;
+== sudoku.mutant.2182
+<   for (int linha = 0; linha < Tabuleiro::TAMANHO; linha++) {
+>   for (int linha = 0; linha != Tabuleiro::TAMANHO; linha++) {
+== sudoku.mutant.2196
+<     if (linha % Tabuleiro::TAMANHO_BLOCO == 0) {
+>     if (linha % Tabuleiro::TAMANHO_BLOCO <= 0) {
+== sudoku.mutant.2236
+>     continue;
+== sudoku.mutant.2617
+<  private:
+>  /*private:*/
+== sudoku.mutant.2701
+<   static constexpr int OPCAO_INVALIDA = -1;
+>   static constexpr int OPCAO_INVALIDA = -(1+1);
+== sudoku.mutant.2806
+>     continue;
+== sudoku.mutant.3050
+>   break;
+== sudoku.mutant.3056
+>       break;
+== sudoku.mutant.3059
+>       break;
+== sudoku.mutant.3065
+>       break;
+== sudoku.mutant.3068
+>       break;
+== sudoku.mutant.3074
+>       break;
+== sudoku.mutant.3077
+>       break;
+== sudoku.mutant.3083
+>       break;
+== sudoku.mutant.3086
+>       break;
+== sudoku.mutant.3092
+>       break;
+== sudoku.mutant.3095
+>       break;
+== sudoku.mutant.3111
+>       break;
+== sudoku.mutant.3115
+>       break;
+== sudoku.mutant.3141
+>       break;
+== sudoku.mutant.3384
+>     break;
+== sudoku.mutant.3385
+>     continue;
+== sudoku.mutant.3390
+>         break;
+== sudoku.mutant.3391
+>         continue;
+== sudoku.mutant.3393
+>         break;
+== sudoku.mutant.3394
+>         continue;
+== sudoku.mutant.3402
+>         break;
+== sudoku.mutant.3403
+>         continue;
+== sudoku.mutant.3411
+>         break;
+== sudoku.mutant.3412
+>         continue;
+== sudoku.mutant.3413
+<         return;
+>         /*return;*/
+== sudoku.mutant.3417
+>         break;
+== sudoku.mutant.3418
+>         continue;
+== sudoku.mutant.3443
+>         break;
+== sudoku.mutant.3444
+>         continue;
+== sudoku.mutant.3447
+>     continue;

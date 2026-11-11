@@ -1,0 +1,7 @@
+Mutantes gerados : 1115
+Invalidos        : 0 (nao compilam, fora do escore)
+Validos          : 1115
+Mortos           : 1009
+Vivos            : 106
+Escore de mutacao: 90.49%  (mortos / validos)
+Obs.: se houver mutantes equivalentes, escore ajustado = mortos / (validos - equivalentes).
